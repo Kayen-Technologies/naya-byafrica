@@ -8,8 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-jost: var(--font-jost);
+  --font-kumbh-sans: var(--font-kumbh-sans);
+  --font-sans: var(--font-kumbh-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +23,23 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes value-strip-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.value-strip-marquee {
+  animation: value-strip-marquee 26s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .value-strip-marquee {
+    animation: none;
+  }
 }
